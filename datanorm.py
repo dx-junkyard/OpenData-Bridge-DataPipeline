@@ -20,16 +20,39 @@ def load_mapping_rules(path):
 
     return mapping_rules
 
-def load_csv(path):
+def csv_conv(path,header_line):
     try:
-        return pd.read_csv(path)
+        return pd.read_csv(path, header=header_line)
     except Exception as e:
         detected_encoding = detect_encoding(path)
         try:
-            return pd.read_csv(path, encoding=detected_encoding)
+            return pd.read_csv(path, encoding=detected_encoding, header=header_line)
         except Exception as e:
             print(f"Could not read {path} with detected encoding {detected_encoding}: {e}")
             return None
+
+def load_csv(filename):
+    # 文字コード判定
+    detected_encoding = detect_encoding(filename)
+
+    # ファイルを全ての行で読み込み
+    with open(filename, 'r', encoding=detected_encoding, errors='replace') as f:
+        lines = f.readlines()
+
+    header_line = 0  # ヘッダー行の初期位置
+
+    # ヘッダー行を発見するまでの空の列を持つ行をチェック
+    for idx, line in enumerate(lines):
+        cells = line.strip().split(',')
+        if '' in cells:
+            header_line = idx + 1
+        else:
+            break
+
+    # pandasでcsvを読み込み、ヘッダー行を指定
+    df = csv_conv(filename, header_line)
+    return df
+
 
 def trans_column_name(df, mapping_rules):
     """DataFrameの列名をマッピングルールに基づいて変更する"""
@@ -108,3 +131,4 @@ if __name__ == '__main__':
     parser.add_argument('directory_path', type=str, help='Path to the directory containing the CSV files.')
     args = parser.parse_args()
     main(args.directory_path)
+
