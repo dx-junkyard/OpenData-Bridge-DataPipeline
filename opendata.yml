@@ -1,0 +1,20 @@
+link:
+- name: "Tenki"
+  title: "テスト"
+  url:  "https://www.data.jma.go.jp/developer/xml/feed/regular.xml"
+  format: "xml"
+  license: 
+
+- name: "TokyoOpenDataCatalog"
+  title: "東京オープンデータカタログ"
+  url:  "https://catalog.data.metro.tokyo.lg.jp/api/3/action/package_search?q=*:*&rows=999999&start=0"
+
+- name: "NurserySchool"
+  title: "東京都認証保育所一覧"
+  url: "https://www.fukushi.metro.tokyo.lg.jp/kodomo/hoiku/ninsyo/ichiran.files/ninshouichiran050801.xlsx"
+  format: "xlsx"
+
+- name: "NurserySchool-csv"
+  title: "社会福祉施設等一覧-保育所"
+  url: "https://www.opendata.metro.tokyo.lg.jp/fukushihoken/202210-2-1-hoikusyo.csv"
+  format: "csv"
