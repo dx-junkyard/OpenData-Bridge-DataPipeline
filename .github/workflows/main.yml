@@ -39,9 +39,9 @@ jobs:
     - name: Upload to the Google Drive
       uses: adityak74/google-drive-upload-git-action@main
       with:
-        credentials: ${{ secrets.GGDRIVE_CREDENTIAL }}
+        credentials: ${{ secrets.GDRIVE_CREDENTIAL }}
         filename: "./docs/fixed/*"
-        folderId: ${{ secrets.GGDRIVE_FOLDERID }}
+        folderId: ${{ secrets.GDRIVE_FOLDERID }}
         overwrite: "true" # optional boolean
     
     - name: Publish to the GitHub Pags
