@@ -29,14 +29,14 @@ docs/           : GitHub Pages公開ページ
 
 ## RepositoryのClone
 Cloneしたいフォルダを作成し、そのフォルダの中で以下を実行します。
-> git clone https://github.com/Mitsuo-Koikawa/Actions_Debug.git .
+> git clone https://github.com/dx-junkyard/OpenData-Bridge-DataPipeline.git .
 
 ## ローカル環境でのPython動作確認
 opendata.yml ファイルを編集して、アクセスをしたいOpenDataの情報を登録して、以下を実行してください。
 
-> python3 fetch.py  
+> python3 download.py  
 
-docs/dataフォルダーの中に取得したデータが登録され、そのデータへのリンクを含んだindex.mdが自動作成されます。以前に取得したデータは残りません。
+docs/sourceフォルダーの中に取得したデータが登録され、そのデータへのリンクを含んだindex.mdが自動作成されます。以前に取得したデータは残りません。
 
 ## 新しいRepository作成
 新しいRepositoryをGitHubのWeb画面上で作成し、動作確認をしたローカルのRepositoryをPushしてください。詳細は他のサイトをご参照ください。
@@ -82,7 +82,7 @@ https://docs.github.com/ja/actions/monitoring-and-troubleshooting-workflows/enab
 ```
 on:  
   schedule:  
-    - cron: '60 * * * *' # Every hour  
+    - cron: '30 2 * * *' # Every hour  
 ```
 
 Actionsは実行に時間がかかるので、あまり小さい数字にしないでください。
