@@ -1,7 +1,7 @@
 # OpenDataの自動取得と整形
 GitHub Actionsで定期的にPythonを実行し、公開されているOpenDataを取得、整形、GitHub Pagesで公開をします。
 
-https://mitsuo-koikawa.github.io/Actions_Debug/
+https://dx-junkyard.github.io/OpenData-Bridge-DataPipeline/
 
 GitHub Pagesは公開Repositoryになるため、OpenDataの取得やファイル保存に必要な各種トークンはRepositoryのSecretに保存します。
 GitHubは容量制限がありますし、Actionsの処理は遅めなので大容量のデータ処理には向きません。
