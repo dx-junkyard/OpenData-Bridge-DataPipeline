@@ -5,9 +5,11 @@ link:
 #   format: "xml"
 #   license: 
 
-# - name: "TokyoOpenDataCatalog"
-#   title: "東京オープンデータカタログ"
-#   url:  "https://catalog.data.metro.tokyo.lg.jp/api/3/action/package_search?q=*:*&rows=999999&start=0"
+- name: "TokyoOpenDataCatalog"
+  title: "東京オープンデータカタログ"
+  url:  "https://catalog.data.metro.tokyo.lg.jp/csv/export"
+  method: "POST"
+  value: ["q=", "search_url_params=res_format=CSV"]
 
 # - name: "NurserySchool"
 #   title: "東京都認証保育所一覧"
