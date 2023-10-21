@@ -13,6 +13,14 @@ def fetch_data(url):
     except requests.exceptions.RequestException as e:
         return e
 
+def fetch_data_post(obj):
+    try:
+        response = requests.post(obj['url], data=obj['value'])
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        return e
+        
 def create_filename(name, url):
     # 現在の時間をもとにファイル名を作成
     file_name = f'{ datetime.now().strftime("%Y%m%d-%H:%M:%S") }-'
@@ -32,7 +40,11 @@ def main():
     html = '# Open Data 整形済み最新データ  \n'
 
     for od_link in od_links:
-        obj_data = fetch_data(od_link['url'])
+        if od_link['method'] is 'POST':
+            obj_data = fetch_data_post(od_link)
+        else:
+            obj_data = fetch_data(od_link['url'])
+        
         # 200 OK 以外ならErrorをMarkdownに出力して処理継続
         if type(obj_data) is not str:
             html += '// ' + od_link['title'] + ': Error - ' + str(obj_data) + '  \n'
