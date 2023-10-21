@@ -30,6 +30,10 @@ def main():
         od_links = config['link']
 
     html = '# Open Data 整形済み最新データ  \n'
+    folderPath = GHPAGE_FOLDER + '/' + DATA_FOLDER
+
+    if not os.path.exists(folderPath):
+        os.makedirs(folderPath)
 
     for od_link in od_links:
         obj_data = fetch_data(od_link['url'])
@@ -40,7 +44,7 @@ def main():
    
         # ファイルに取得したDataを保存
         file_name = create_filename(od_link['name'], od_link['url'])
-        with open(GHPAGE_FOLDER + '/' + DATA_FOLDER + '/' + file_name, 'w') as f:
+        with open(folderPath + '/' + file_name, 'w') as f:
             f.write(obj_data)
 
         ### TODO: 保存したファイルにConverter処理を行う

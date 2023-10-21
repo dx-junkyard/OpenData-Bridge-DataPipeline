@@ -30,19 +30,30 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Download the Open Data
-      run: python download.py
+    - name: Create download folder name on date
+      run: |
+        folder_name='.docs/fixed/$(date +'%Y%m%d-%H%m%S')
+        mkdir folder_name
+        echo "FOLDER_NAME=$folder_name" >> $GITHUB_ENV
+      id: create_folder
 
-    - name: Convert the downloaded data
-      run: python datanorm.py ./docs/source
+    # - name: Download the Open Data
+    #   run: python download.py ${{env.FOLDER_NAME}}
+
+    - name: Run pipeline
+      # run: python datanorm.py ./docs/source
+      run: python pipeline_executor.py ${{env.FOLDER_NAME}}
 
     - name: Upload to the Google Drive
       uses: adityak74/google-drive-upload-git-action@main
       with:
         credentials: ${{ secrets.GDRIVE_CREDENTIAL }}
-        filename: "./docs/fixed/*"
+        # filename: "./docs/fixed/*"
+        filename: ${{env.FOLDER_NAME}}
         folderId: ${{ secrets.GDRIVE_FOLDERID }}
         overwrite: "true" # optional boolean
+    
+    # - name: Create report page
     
     - name: Publish to the GitHub Pags
       uses: peaceiris/actions-gh-pages@v3

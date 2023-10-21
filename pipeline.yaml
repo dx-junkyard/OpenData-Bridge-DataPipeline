@@ -1,0 +1,43 @@
+steps:
+  - name: OpenDataDownload
+    type: download
+    download_config: download_config.json
+    download_dir: source
+    gh-page_dir: docs
+
+  - name: MergeData
+    type: merge
+    transform_config: mapping_rules.json
+    download_dir: source
+    input_files: [
+        13103hoikuen201612.csv
+        ,13103hoikusupport201612.csv
+        ,13103kosodatehiroba201612.csv
+        ,13112hoiku.csv
+        ,13112jido.csv
+        ,13112kodomo.csv
+        ,13119attach681571.csv
+        ,1312017hattatsushien.csv
+        ,1312033jidoukan.csv
+        ,13120kuritsuhoikuen.csv
+        ,1312320150914kosodate.csv
+        ,13201gakudouichiran.csv
+        ,13213chiikigatahoiku.csv
+        ,13213jidoclub.csv
+        ,13213jidokan.csv
+        ,13213kosodate.csv
+        ,13213ninkahoikujo.csv
+        ,13213ninsyohoikushitsu.csv
+        ,13213sonotahoikushitsu.csv
+        ,13218gakudouclub.csv
+        ,13218nurseryschool.csv
+        ,132217preschool-gakudo.csv
+        ,132217preschoolhoi-you.csv
+        ,13223gakudo.csv
+        ,13223hoikuen.csv
+        ,13223jidokan.csv
+        ,13223jidoyuen.csv
+        ,13225c191.csv
+        ,kyoikushisetsu.csv]
+    output_file: ./docs/fixed/merged.csv
+
