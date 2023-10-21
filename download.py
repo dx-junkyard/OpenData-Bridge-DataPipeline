@@ -15,7 +15,9 @@ def fetch_data(url):
 
 def fetch_data_post(obj):
     try:
-        response = requests.post(obj['url], data=obj['value'])
+        url = obj['url']
+        data = obj['data']
+        response = requests.post(url, data=data)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
@@ -40,7 +42,7 @@ def main():
     html = '# Open Data 整形済み最新データ  \n'
 
     for od_link in od_links:
-        if od_link['method'] is 'POST':
+        if 'post' in od_link:       ## is 'POST'
             obj_data = fetch_data_post(od_link)
         else:
             obj_data = fetch_data(od_link['url'])
