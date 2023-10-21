@@ -35,6 +35,9 @@ jobs:
 
     # - name: Convert the downloaded data
     #   run: python datanorm.py ./docs/source
+    - name: copy files
+      run: |
+        cp ./docs/source/* ./docs/fixed/
 
     - name: Upload to the Google Drive
       uses: adityak74/google-drive-upload-git-action@main
