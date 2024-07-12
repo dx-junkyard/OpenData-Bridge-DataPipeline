@@ -1,5 +1,5 @@
 # Open Data 整形済み最新データ  
-[東京オープンデータカタログ](source/20240711-11:50:01-TokyoOpenDataCatalog.csv) \([source](https://catalog.data.metro.tokyo.lg.jp/csv/export)\)  
+// 東京オープンデータカタログ: Error - 504 Server Error: Gateway Timeout for url: https://catalog.data.metro.tokyo.lg.jp/csv/export  
 // 131121_東京都_世田谷区_保育・子育て支援施設 - 子ども関係施設: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/82b439bf-98bc-46ce-88c5-678add8f6c0f/resource/45d21c3a-8216-4ce1-8cee-87c5e59065de/download/13112kodomo.csv  
 // 131121_東京都_世田谷区_保育・子育て支援施設 - 児童館: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/82b439bf-98bc-46ce-88c5-678add8f6c0f/resource/5f5922e7-b34e-40b6-a266-cf6e38403c6f/download/13112jido.csv  
 // 131121_東京都_世田谷区_保育・子育て支援施設 - 保育所: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/82b439bf-98bc-46ce-88c5-678add8f6c0f/resource/ec75b939-30f3-4afd-b26e-956712d6308b/download/13112hoiku.csv  
@@ -29,4 +29,4 @@
 // 132187_東京都_福生市_保育・子育て支援施設 - 学童クラブ: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/0054a331-698e-4102-9c5d-5e5b78ac95a5/resource/e8e85807-832f-4e43-b836-60181cc3f993/download/13218gakudouclub.csv  
 // 132187_東京都_福生市_保育・子育て支援施設 - 保育園・保育所: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/0054a331-698e-4102-9c5d-5e5b78ac95a5/resource/f5c48b6b-a2dd-40e6-9224-73979a46eeeb/download/13218nurseryschool.csv  
 // 131091_東京都_品川区_保育・子育て支援施設 - 教育・子どもの施設: Error - 403 Client Error: Forbidden for url: https://www.geospatial.jp/ckan/dataset/7a47a557-76d9-4932-9111-d5ab9c37757c/resource/f3fe7701-0d62-4ed8-bee1-53d91b18e8f1/download/kyoikushisetsu.csv  
-last update: 20240711-11:50:03  
+last update: 20240712-11:49:02  
